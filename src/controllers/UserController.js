@@ -24,7 +24,10 @@ module.exports = {
         message: "Email already exists. Would you like to login instead?",
       });
     } catch (error) {
-      throw Error(`Had an error while creating new user: ${error}`);
+      console.error(`Had an error while creating new user: ${error}`);
+      return res.status(400).json({
+        message: "There was an error creating this user. Please try again!",
+      });
     }
   },
 
