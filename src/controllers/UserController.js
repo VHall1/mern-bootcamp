@@ -27,4 +27,17 @@ module.exports = {
       throw Error(`Had an error while creating new user: ${error}`);
     }
   },
+
+  async getUserById(req, res) {
+    const { userId } = req.params;
+
+    try {
+      const user = await User.findById(userId);
+      return res.json(user);
+    } catch (error) {
+      return res.status(400).json({
+        message: "User ID does not exist, do you want to register instead?",
+      });
+    }
+  },
 };
