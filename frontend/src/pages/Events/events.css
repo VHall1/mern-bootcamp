@@ -1,0 +1,29 @@
+label#thumbnail {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px;
+  margin-bottom: 20px;
+  
+  cursor: pointer;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+label#thumbnail input {
+  display: none;
+}
+
+label#thumbnail.has-thumbnail {
+  border: 0;
+}
+
+label#thumbnail.has-thumbnail img {
+  display: none;
+}
+
+.container > .event-validation {
+  margin-top: 12px;
+}
